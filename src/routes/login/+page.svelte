@@ -26,14 +26,14 @@
   </fieldset>
   <Button buttonText="Login" classname="submit" />
 </form>
+
 {#if form?.invalid}
-  <p>Username and password required</p>
-  <a href="/create-account">Create account</a>
+  <p class="error">Username or password incorrect</p>
 {/if}
 
 {#if form?.credentials}
-  <p>Wrong credentials</p>
-  <a href="/create-account">Create account</a>
+  <p class="error">Wrong credentials</p>
+  <a href="/create-account" class="error error-link">Create an account →</a>
 {/if}
 <br /><br />
 <Link linkHref="#" linkText="Forgot Password?" />

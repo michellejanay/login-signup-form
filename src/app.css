@@ -54,11 +54,36 @@ h1 {
   align-items: center;
   width: 100%;
 }
+form {
+  margin: 0;
+  padding: 0;
+}
+fieldset {
+  width: 100%;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+legend {
+  visibility: hidden;
+  position: abolute;
+}
+label {
+  font-size: 1.5em;
+  margin: 0.2em 0;
+}
 .flex-container > .btn {
-  /* width: 60% !important; */
   width: 80%;
 }
 .active:active,
 .active:focus {
   border: solid 4px var(--magenta);
+}
+.error {
+  color: var(--yellow);
+  font-weight: bold;
+}
+.error-link {
+  font-size: 1.2em;
+  text-decoration: none;
 }

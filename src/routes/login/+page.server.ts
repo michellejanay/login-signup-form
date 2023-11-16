@@ -1,4 +1,4 @@
-import { invalid, redirect } from "@sveltejs/kit";
+import { fail, redirect } from "@sveltejs/kit";
 import type { Action, Actions, PageServerLoad } from "./$types";
 import bcrypt from "bcrypt";
 
@@ -20,7 +20,7 @@ export const actions: Actions = {
       !email ||
       !password
     ) {
-      return invalid(400, { invalid: true });
+      return fail(400, { invalid: true });
     }
 
     const user = await db.user.findUnique({
@@ -28,13 +28,13 @@ export const actions: Actions = {
     });
 
     if (!user) {
-      return invalid(400, { credentials: true });
+      return fail(400, { credentials: true });
     }
 
     const userPassword = await bcrypt.compare(password, user.passwordHash);
 
     if (!userPassword) {
-      return invalid(400, { credentials: true });
+      return fail(400, { invalid: true });
     }
 
     const authenticatedUser = await db.user.update({
