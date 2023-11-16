@@ -1,0 +1,64 @@
+:root {
+  --bg-900: #22001f;
+  --teal: #40e8ff;
+  --teal-hover: #99f3ff;
+  --magenta: #ff40ec;
+  --yellow: #faff0f;
+}
+
+.app-container {
+  background: url("lib/bg-galaxy.png");
+  background-position: center;
+  height: 100vh;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 2em;
+  width: 100vw;
+  margin: auto;
+}
+.font-style {
+  font-family: "Courier";
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.16rem;
+}
+.slot-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+h1 {
+  text-align: center;
+  letter-spacing: 0.8rem;
+}
+.fancy-text {
+  padding: 4em 0;
+}
+.welcome-text {
+  margin-top: -3.3rem;
+  font-size: 3em;
+}
+.magenta {
+  color: var(--magenta);
+  margin-left: -0.1em;
+}
+.cyan {
+  color: var(--teal);
+  margin-right: -0.1em;
+}
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.flex-container > .btn {
+  /* width: 60% !important; */
+  width: 80%;
+}
+.active:active,
+.active:focus {
+  border: solid 4px var(--magenta);
+}
